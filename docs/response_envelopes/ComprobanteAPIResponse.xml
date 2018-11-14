@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:tns="http://localhost/soap-translator">
+    <SOAP-ENV:Body>
+        <ns1:RestService.generarComprobanteResponse xmlns:ns1="http://tempuri.org">
+            <return xsi:type="tns:ComprobanteAPIResponse">
+                <archivoEntrada xsi:type="xsd:string">-archivoEntrada-</archivoEntrada>
+                <archivoPDF417 xsi:type="xsd:string">-archivoPDF417-</archivoPDF417>
+                <archivoXML xsi:type="xsd:string">-archivoXML-</archivoXML>
+                <clienteNumeroDocumento xsi:type="xsd:string">-clienteNumeroDocumento-</clienteNumeroDocumento>
+                <clienteTipoDocumento xsi:type="xsd:string">-clienteTipoDocumento-</clienteTipoDocumento>
+                <codigoError xsi:type="xsd:string">-codigoError-</codigoError>
+                <correlativo xsi:type="xsd:string">-correlativo-</correlativo>
+                <fecha xsi:type="xsd:string">-fecha-</fecha>
+                <fechaEmision xsi:type="xsd:string">-fechaEmision-</fechaEmision>
+                <hash xsi:type="xsd:string">-hash-</hash>
+                <hora xsi:type="xsd:string">-hora-</hora>
+                <importeTotal xsi:type="xsd:string">-importeTotal-</importeTotal>
+                <mensajeError xsi:type="xsd:string">-mensajeError-</mensajeError>
+                <resultadoFirma xsi:type="xsd:string">-resultadoFirma-</resultadoFirma>
+                <ruc xsi:type="xsd:string">-ruc-</ruc>
+                <serie xsi:type="xsd:string">-serie-</serie>
+                <tipoComprobante xsi:type="xsd:string">-tipoComprobante-</tipoComprobante>
+                <totalImpuestos xsi:type="xsd:string">-totalImpuestos-</totalImpuestos>
+            </return>
+        </ns1:RestService.generarComprobanteResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

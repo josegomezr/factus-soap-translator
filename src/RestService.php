@@ -1,5 +1,7 @@
 <?php 
 
+use GuzzleHttp\Exception\RequestException;
+
 class RestService {
   protected $restBaseUrl = 'http://localhost:11770/v1.0.0';
   protected $http = null;
@@ -36,30 +38,21 @@ class RestService {
       'Comprobante' => $comp,
     ];
 
-    file_put_contents('/tmp/debug', "\n[". date('Y-m-d H:i:s')."]: ", FILE_APPEND);
-    file_put_contents('/tmp/debug', json_encode($payload, JSON_PRETTY_PRINT), FILE_APPEND);
-    file_put_contents('/tmp/debug', "\n----\n\n", FILE_APPEND);
-    
-    $respuesta = [
-      'archivoEntrada' => '-archivoEntrada-',
-      'archivoPDF417' => '-archivoPDF417-',
-      'archivoXML' => '-archivoXML-',
-      'clienteNumeroDocumento' => '-clienteNumeroDocumento-',
-      'clienteTipoDocumento' => '-clienteTipoDocumento-',
-      'codigoError' => '-codigoError-',
-      'correlativo' => '-correlativo-',
-      'fecha' => '-fecha-',
-      'fechaEmision' => '-fechaEmision-',
-      'hash' => '-hash-',
-      'hora' => '-hora-',
-      'importeTotal' => '-importeTotal-',
-      'mensajeError' => '-mensajeError-',
-      'resultadoFirma' => '-resultadoFirma-',
-      'ruc' => '-ruc-',
-      'serie' => '-serie-',
-      'tipoComprobante' => '-tipoComprobante-',
-      'totalImpuestos' => '-totalImpuestos-',
-    ];
+    // para debuggear la entrada hay que loggearla en un archivo colateral
+    // cualquiera de estas ayuda.
+    // error_log(json_encode($payload));  
+    // file_put_content('debug.txt', $payload);
+
+    try {
+      $response = $this->http->post('/comprobantes/generar', [
+        'json' => $payload
+      ]);
+      $respuesta = json_decode($response->getBody());
+    } catch (RequestException $e) {
+      $respuesta = [
+        'api-error' => 'REQUEST-ERROR',
+      ];
+    }
 
     return $respuesta;
   }
@@ -82,30 +75,16 @@ class RestService {
       'Comprobante' => $comp,
     ];
 
-    file_put_contents('/tmp/debug', "\n[". date('Y-m-d H:i:s')."]: ", FILE_APPEND);
-    file_put_contents('/tmp/debug', json_encode($payload, JSON_PRETTY_PRINT), FILE_APPEND);
-    file_put_contents('/tmp/debug', "\n----\n\n", FILE_APPEND);
-    
-    $respuesta = [
-      'archivoEntrada' => '-archivoEntrada-',
-      'archivoPDF417' => '-archivoPDF417-',
-      'archivoXML' => '-archivoXML-',
-      'clienteNumeroDocumento' => '-clienteNumeroDocumento-',
-      'clienteTipoDocumento' => '-clienteTipoDocumento-',
-      'codigoError' => '-codigoError-',
-      'correlativo' => '-correlativo-',
-      'fecha' => '-fecha-',
-      'fechaEmision' => '-fechaEmision-',
-      'hash' => '-hash-',
-      'hora' => '-hora-',
-      'importeTotal' => '-importeTotal-',
-      'mensajeError' => '-mensajeError-',
-      'resultadoFirma' => '-resultadoFirma-',
-      'ruc' => '-ruc-',
-      'serie' => '-serie-',
-      'tipoComprobante' => '-tipoComprobante-',
-      'totalImpuestos' => '-totalImpuestos-',
-    ];
+    try {
+      $response = $this->http->post('/comprobantes/anular', [
+        'json' => $payload
+      ]);
+      $respuesta = json_decode($response->getBody());
+    } catch (RequestException $e) {
+      $respuesta = [
+        'api-error' => 'REQUEST-ERROR',
+      ];
+    }
 
     return $respuesta;
   }
@@ -114,34 +93,30 @@ class RestService {
   {
     $this->prepareApiClient();
 
-    $respuesta = [
-      'uuid' => '123123123',
-      'notificaciones' => [
-        [
-          'nid' => '',
-          'tipo' => '',
-          'comprobante' => '',
-          'status' => '',
-          'ruc' => '',
-          'createTime' => '',
-          'codigo' => '',
-          'descripcion' => '',
-          'cdr' => '',
-        ]
-      ]
-    ];
-
+    try {
+      $response = $this->http->get('/notificaciones');
+      $respuesta = json_decode($response->getBody());
+    } catch (RequestException $e) {
+      $respuesta = [
+        'api-error' => 'REQUEST-ERROR',
+      ];
+    }
+    
     return $respuesta;
   }
 
-  public function borrarNotificaciones()
+  public function borrarNotificaciones($uuid)
   {
     $this->prepareApiClient();
 
-    $respuesta = [
-      'codigoError' => '123123123',
-      'mensajeError' => 'ok',
-    ];
+    try {
+      $response = $this->http->delete("/notificaciones/{$uuid}");
+      $respuesta = json_decode($response->getBody());
+    } catch (RequestException $e) {
+      $respuesta = [
+        'api-error' => 'REQUEST-ERROR',
+      ];
+    }
 
     return $respuesta;
   }

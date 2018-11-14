@@ -405,6 +405,11 @@ return [
     'compositor'      => 'all',
     'restrictionBase' => '',
     'elements'        => array( // elements
+      'api-error' => array(
+        'name' => 'api-error',
+        'type' => 'xsd:string',
+        'minOccurs' => 0,
+      ),
       'tipo-comprobante' => array(
         'name' => 'tipo-comprobante',
         'type' => 'xsd:string',
@@ -560,6 +565,11 @@ return [
     'compositor'      => 'all',
     'restrictionBase' => '',
     'elements'        => array(
+      'api-error' => array(
+        'name' => 'api-error',
+        'type' => 'xsd:string',
+        'minOccurs' => 0,
+      ),
       'notificaciones' => array(
         'name' => 'notificaciones',
         'type' => 'tns:NotificacionList',
@@ -580,6 +590,11 @@ return [
     'compositor'      => 'all',
     'restrictionBase' => '',
     'elements'        => array(
+      'api-error' => array(
+        'name' => 'api-error',
+        'type' => 'xsd:string',
+        'minOccurs' => 0,
+      ),
       'codigoError' => array(
         'name' => 'codigoError',
         'type' => 'xsd:string'

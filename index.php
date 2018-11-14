@@ -79,7 +79,7 @@ $server->register(
 $server->register( 
   'RestService.borrarNotificaciones', // method name:
   array( // parameter list:
-    'xsd:string'
+    'uuid' => 'xsd:string'
   ), 
   array( // return value(s):
     'return' => 'tns:BorrarNotificacionesAPIResponse'

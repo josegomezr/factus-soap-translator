@@ -118,31 +118,45 @@ $comprobante = array(
     ),
   ),
 );
+$uuid = 'uuid';
 
-# $result = $client->call('RestService.generarComprobante', [$comprobante]);
-$result = $client->call('RestService.anularComprobante', [$comprobante]);
-// Check for a fault
-if ($client->fault) {
-  echo "## Fault\n";
-  print_r($result);
-} else {
-  // Check for errors
-  $err = $client->getError();
-  if ($err) {
-    // Display the error
-    echo '<h2>Error</h2><pre>' . $err . '</pre>';
-  } else {
-    // Display the result
-    echo '<h2>Result</h2><pre>';
-    print_r($result);
-    echo '</pre>';
-  }
-}
+$result = $client->call('RestService.borrarNotificaciones', ['uuid' => $uuid]);
+
 // Display the request and response
 echo '<h2>Request</h2>';
 echo '<pre>' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
 echo '<h2>Response</h2>';
 echo '<pre>' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
-// Display the debug messages
-echo '<h2>Debug</h2>';
-echo '<pre>' . htmlspecialchars($client->debug_str, ENT_QUOTES) . '</pre>';
+echo '<hr>';
+
+$result = $client->call('RestService.generarComprobante', [
+  'comprobante' => $comprobante
+]);
+
+// Display the request and response
+echo '<h2>Request</h2>';
+echo '<pre>' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
+echo '<h2>Response</h2>';
+echo '<pre>' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
+echo '<hr>';
+
+
+$result = $client->call('RestService.anularComprobante', [
+  'comprobante' => $comprobante
+]);
+
+// Display the request and response
+echo '<h2>Request</h2>';
+echo '<pre>' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
+echo '<h2>Response</h2>';
+echo '<pre>' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
+echo '<hr>';
+
+
+$result = $client->call('RestService.obtenerNotificaciones', []);
+
+// Display the request and response
+echo '<h2>Request</h2>';
+echo '<pre>' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
+echo '<h2>Response</h2>';
+echo '<pre>' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
