@@ -24,9 +24,9 @@ los 4 endpoints.
 SOAP Response Envelopes
 -----------------------
 
-Los Requests están guardados en la carpeta [request_envelopes](docs/request_envelopes). 
+Las Respuestas están guardadas en la carpeta [docs/response_envelopes](docs/response_envelopes). 
 
-[apiError.xml](docs/response-envelopes/apiError.xml) es un ejemplo en caso de 
+[apiError.xml](docs/response_envelopes/apiError.xml) es un ejemplo en caso de 
 error, **todos** las peticiones que den error de conexión y/o errores >400
 retornarán un esquema similar (solo cambian las referencias al response correspondiente).
 
