@@ -43,6 +43,13 @@ http://tu-servidor/ruta/?wdl
 ; o incluso: http://soap.tu-servicio.com/?wsdl
 ```
 
+Generar Respuestas de Ejemplo
+-----------------------------
+
+[client.php](client.php) tiene un ejemplo de un SOAP Client usando NuSOAP. Están
+los 4 endpoints llamados allí, y sirven para generar XML de prueba con tan solo
+alterar la estructura de cada parámetro.
+
 Ejemplo CRUDO
 -------------
 
