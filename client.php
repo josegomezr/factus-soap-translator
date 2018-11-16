@@ -55,6 +55,7 @@ $comprobante = array(
     "direccion" => "JR. SANTA ROSA 5 ET",
   ),
   'items' => array(
+    array(
     'id' => 1,
     'precio-venta' => 3,
     'cantidad' => 3,
@@ -96,6 +97,7 @@ $comprobante = array(
         ),
       ),
     ),
+  )
   ),
   'otros-atributos' => array(
     array(
@@ -119,25 +121,15 @@ $comprobante = array(
   ),
 );
 $uuid = 'uuid';
-
-$result = $client->call('RestService.borrarNotificaciones', ['uuid' => $uuid]);
-
-// Display the request and response
-echo '<h2>Request</h2>';
-echo '<pre>' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
-echo '<h2>Response</h2>';
-echo '<pre>' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
-echo '<hr>';
-
 $result = $client->call('RestService.generarComprobante', [
   'comprobante' => $comprobante
 ]);
 
 // Display the request and response
 echo '<h2>Request</h2>';
-echo '<pre>' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
+echo '<pre style="white-space: pre-line;">' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
 echo '<h2>Response</h2>';
-echo '<pre>' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
+echo '<pre style="white-space: pre-line;">' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
 echo '<hr>';
 
 
@@ -147,16 +139,24 @@ $result = $client->call('RestService.anularComprobante', [
 
 // Display the request and response
 echo '<h2>Request</h2>';
-echo '<pre>' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
+echo '<pre style="white-space: pre-line;">' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
 echo '<h2>Response</h2>';
-echo '<pre>' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
+echo '<pre style="white-space: pre-line;">' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
 echo '<hr>';
 
+$result = $client->call('RestService.borrarNotificaciones', ['uuid' => $uuid]);
+
+// Display the request and response
+echo '<h2>Request</h2>';
+echo '<pre style="white-space: pre-line;">' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
+echo '<h2>Response</h2>';
+echo '<pre style="white-space: pre-line;">' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
+echo '<hr>';
 
 $result = $client->call('RestService.obtenerNotificaciones', []);
 
 // Display the request and response
 echo '<h2>Request</h2>';
-echo '<pre>' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
+echo '<pre style="white-space: pre-line;">' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
 echo '<h2>Response</h2>';
-echo '<pre>' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
+echo '<pre style="white-space: pre-line;">' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';

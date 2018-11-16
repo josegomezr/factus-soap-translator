@@ -3,8 +3,8 @@
     xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
     <SOAP-ENV:Body>
-        <ns3189:RestService.borrarNotificaciones xmlns:ns3189="http://tempuri.org">
+        <ns8314:RestService.borrarNotificaciones xmlns:ns8314="http://tempuri.org">
             <uuid xsi:type="xsd:string">uuid</uuid>
-        </ns3189:RestService.borrarNotificaciones>
+        </ns8314:RestService.borrarNotificaciones>
     </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

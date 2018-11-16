@@ -1,0 +1,117 @@
+﻿{
+  "Comprobante": {
+    "tipo-comprobante": "01",
+    "serie-correlativo": "FA12-00000002",
+    "fecha-emision": "2018-10-05",
+    "tipo-moneda": "USD",
+    "tipo-operacion": "0200",
+    "emisor": {
+      "numero-documento": 20543314529,
+      "tipo-documento": "6",
+      "nombre-comercial": "complexlesS.A.C.",
+      "razon-social": "COMPLEXLESS S.A.C.",
+      "ubigeo": 150119,
+      "pais": "PE",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "LURIN",
+      "direccion": "CALLE F S/N URBANIZACIN SANTA GENOVEVA",
+      "establecimiento": "10001"
+    },
+    "cliente": {
+      "numero-documento": "-",
+      "tipo-documento": "0",
+      "razon-social": "JSC TIMBER LTD",
+      "pais": "NZ",
+      "direccion": "22 Sawmill Road, Riverhead, Auckland 0841 - Auckland - Nueva Zelanda"
+    },
+    "items": [
+      {
+        "id": 1,
+        "precio-venta": 1640,
+        "cantidad": 27.61,
+        "unidad-medida": "MTQ",
+        "descripcion": "GARAPA - FSC 100% DECKING SGS-COC-002228 KILN DRIED GRADE:A IN 19MM THICKNESS",
+        "codigo-producto": "18.16.013599",
+        "codigo-producto-sunat": "41111801",
+        "total-item": 45280.4,
+        "precio-unitario": 1640,
+        "tipo-precio": "01",
+        "impuestos": [
+          {
+            "id": "FRE",
+            "sunat-id": 9995,
+            "nombre": "EXP",
+            "base-imponible": 45280.4,
+            "total-impuesto": 0,
+            "porcentaje": 0,
+            "afectacion-igv": 40
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "precio-venta": 2650,
+        "cantidad": 1,
+        "unidad-medida": "NIU",
+        "descripcion": "OCEAN FREIGHT",
+        "codigo-producto": "-",
+        "total-item": 2650,
+        "precio-unitario": 2650,
+        "codigo-producto-sunat": "41111801",
+        "tipo-precio": "01",
+        "impuestos": [
+          {
+            "id": "FRE",
+            "sunat-id": 9995,
+            "nombre": "EXP",
+            "base-imponible": 2650,
+            "total-impuesto": 0,
+            "porcentaje": 0,
+            "afectacion-igv": 40
+          }
+        ]
+      }
+    ],
+    "impuestos": [
+      {
+        "id": "FRE",
+        "sunat-id": 9995,
+        "nombre": "EXP",
+        "total-impuesto": 0,
+        "base-imponible": 47930.4
+      }
+    ],
+    "totales": {
+      "importe-total": 47930.4,
+      "total-cargos": 0,
+      "total-descuentos": 0,
+      "total-impuestos": 0,
+      "total-sin-impuestos": 47930.4
+    },
+    "propiedades-adicionales": [
+      {
+        "id": 1000,
+        "valor": "CUARENTA Y SIETE MIL NOVECIENTOS TREINTA  CON 40/100 DOLARES AMERICANOS",
+        "nombre": "Monto en Letras"
+      }
+    ],
+    "otros-atributos": [
+      {
+        "grupo": "factus_pe",
+        "nombre": "mail-cliente",
+        "valor": "facturacion@Complexless.com"
+      },
+      {
+        "grupo": "factus_pe",
+        "nombre": "mail-facturador",
+        "valor": "facturacion@Complexless.com"
+      },
+       {
+        "grupo": "PE",
+        "nombre": "Plantilla",
+        "valor": "factura-exterior-v1.jasper"
+      }
+    ]
+  }
+}

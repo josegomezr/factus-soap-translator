@@ -1,0 +1,101 @@
+{
+    "Comprobante": {
+        "fecha-emision": "2018-01-01",
+        "serie-correlativo": "FA12-00000004",
+        "tipo-comprobante": "01",
+        "tipo-moneda": "PEN",
+        "tipo-operacion": "0101",
+        "propiedades-adicionales": [
+            {
+                "id": "1000",
+                "valor": "DOSCIENTOS SEIS CON 25\/100 SOLES",
+                "nombre": "monto en letras"
+            }
+        ],
+        "emisor": {
+            "numero-documento": 20543314529,
+            "tipo-documento": "6",
+            "nombre-comercial": "VIDRIERIA LIMATAMBO SOCIEDAD ANONIMA CER",
+            "razon-social": "VIDRIERIA LIMATAMBO SOCIEDAD ANONIMA CER",
+            "ubigeo": "130107",
+            "pais": "PE",
+            "departamento": "LIMA",
+            "provincia": "LIMA",
+            "distrito": "SAN JUAN DE LURIGANC",
+            "direccion": "AV. PROC. DE LA INDEPENDE",
+            "establecimiento": 1000
+        },
+        "cliente": {
+            "numero-documento": "10218825945",
+            "tipo-documento": "6",
+            "razon-social": "FLORES JIMENEZ JIMER",
+            "pais": "PE",
+            "direccion": "JR. SANTA ROSA 5 ET"
+        },
+        "items": [
+            {
+                "id": 1,
+                "precio-venta": 3,
+                "cantidad": 3,
+                "unidad-medida": "aaa",
+                "descripcion": "looool",
+                "codigo-producto": "1dasdasdas",
+                "codigo-producto-sunat": "1sdadasd",
+                "total-item": 1,
+                "precio-unitario": 123,
+                "tipo-precio": "1",
+                "impuestos": [
+                    {
+                        "afectacion-igv": "10",
+                        "base-imponible": 174.79,
+                        "id": "VAT",
+                        "nombre": "IGV",
+                        "sunat-id": "1000",
+                        "total-impuesto": 31.46
+                    },
+                    {
+                        "afectacion-igv": "10",
+                        "base-imponible": 174.79,
+                        "id": "VAT",
+                        "nombre": "IGV",
+                        "sunat-id": "1000",
+                        "total-impuesto": 31.46
+                    }
+                ],
+                "descuentos-cargos": [
+                    {
+                        "id": "01",
+                        "flag": "false",
+                        "monto": 1,
+                        "factor": 2,
+                        "base-imponible": 0
+                    }
+                ]
+            }
+        ],
+        "otros-atributos": [
+            {
+                "grupo": "x",
+                "nombre": "x",
+                "valor": "x"
+            }
+        ],
+        "impuestos": [
+            {
+                "afectacion-igv": "10",
+                "base-imponible": 174.79,
+                "id": "VAT",
+                "nombre": "IGV",
+                "sunat-id": "1000",
+                "total-impuesto": 31.46
+            }
+        ],
+        "totales": {
+            "importe-total": null,
+            "total-cargos": null,
+            "total-descuentos": null,
+            "total-impuestos": null,
+            "total-sin-impuestos": null
+        }
+    }
+}

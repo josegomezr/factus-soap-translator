@@ -271,6 +271,25 @@ return [
     ),
     'arrayType' => 'tns:DescuentoCargo',
   ],
+
+  [
+    'name'            => 'ItemComprobanteList',
+    'typeClass'       => 'complexType',
+    'phpType'         => 'array',
+    'compositor'      => '',
+    'restrictionBase' => 'soapenc:Array',
+    'elements'        => array(
+      
+    ),
+    'attrs' => array(
+      array(
+        'wsdl:arrayType' => 'ItemComprobante[]',
+        'ref' => 'soapenc:arrayType',
+      )
+    ),
+    'arrayType' => 'tns:DescuentoCargo',
+  ],
+
   [
     'name'            => 'PropiedadAdicionalList',
     'typeClass'       => 'complexType',
@@ -368,7 +387,7 @@ return [
 
       'items' => array(
         'name' => 'items',
-        'type' => 'tns:ItemComprobante',
+        'type' => 'tns:ItemComprobanteList',
         'minOccurs' => 0,
         'maxOccurs' => 'unbounded',
       ),

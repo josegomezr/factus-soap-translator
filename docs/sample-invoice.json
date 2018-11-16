@@ -1,0 +1,95 @@
+{
+  "Comprobante": {
+    "tipo-comprobante": "01",
+    "serie-correlativo": "FA12-00000004",
+    "fecha-emision": "2018-10-11",
+    "tipo-moneda": "PEN",
+    "tipo-operacion": "0101",
+    "emisor": {
+      "numero-documento": 20543314529,
+      "tipo-documento": "6",
+      "nombre-comercial": "VIDRIERIA LIMATAMBO SOCIEDAD ANONIMA CER",
+      "razon-social": "VIDRIERIA LIMATAMBO SOCIEDAD ANONIMA CER",
+      "ubigeo": "130107",
+      "pais": "PE",
+      "departamento": "LIMA",
+      "provincia": "LIMA",
+      "distrito": "SAN JUAN DE LURIGANC",
+      "direccion": "AV. PROC. DE LA INDEPENDE",
+      "establecimiento": 1000
+    },
+    "cliente": {
+      "numero-documento": "10218825945",
+      "tipo-documento": "6",
+      "razon-social": "FLORES JIMENEZ JIMER",
+      "pais": "PE",
+      "direccion": "JR. SANTA ROSA 5 ET"
+    },
+    "items": [
+      {
+        "id": "1",
+        "unidad-medida": "FOT",
+        "cantidad": 49.57,
+        "precio-venta": 3.16,
+        "descripcion": "cristal 10 mm incoloro cortado s/medidas ind.",
+        "precio-unitario": 3.526,
+        "codigo-producto": "VCP0000003",
+        "tipo-precio": "01",
+        "codigo-producto-sunat": "41111800",
+        "total-item": 174.78,
+        "total-impuestos": 31.46,
+        "impuestos": [
+          {
+            "total-impuesto": 31.46,
+            "base-imponible": 174.78,
+            "porcentaje": "18.00",
+            "afectacion-igv": "10",
+            "sunat-id": "1000",
+            "nombre": "IGV",
+            "id": "VAT"
+          }
+        ],
+        "descuentos-cargos": [
+          {
+            "id": "01",
+            "flag": "false",
+            "monto": 1,
+            "factor": 2,
+            "base-imponible": 0
+          }
+        ]
+      }
+    ],
+    "impuestos": [
+      {
+        "id": "VAT",
+        "nombre": "IGV",
+        "sunat-id": "1000",
+        "base-imponible": 174.79,
+        "total-impuesto": 31.46,
+        "afectacion-igv": "10"
+      }
+    ],
+    "totales": {
+      "total-cargos": 0,
+      "total-sin-impuestos": 174.79,
+      "total-descuentos": 0,
+      "total-impuestos": 31.46,
+      "importe-total": 206.25
+    },
+    "propiedades-adicionales": [
+      {
+        "id": "1000",
+        "valor": "DOSCIENTOS SEIS CON 25/100 SOLES",
+        "nombre": "monto en letras"
+      }
+    ],
+    "otros-atributos": [
+      {
+        "grupo": "factus_pe",
+        "nombre": "mail-cliente",
+        "valor": "jimmy1498@hotl.com"
+      }
+    ]
+  }
+}

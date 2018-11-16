@@ -3,7 +3,7 @@
 use GuzzleHttp\Exception\RequestException;
 
 class RestService {
-  protected $restBaseUrl = 'http://localhost:11770/v1.0.0';
+  protected $restBaseUrl = 'http://57da85b3.ngrok.io';
   protected $http = null;
   public function prepareApiClient()
   {
@@ -34,6 +34,28 @@ class RestService {
       'total-sin-impuestos' => self::arr_get($comp, 'total-sin-impuestos'),
     ];
 
+    if(self::arr_get($comp, 'impuestos', false) !== false){
+      $comp['impuestos'] = self::arr_get($comp['impuestos'], 0, []);
+    }
+
+    if(self::arr_get($comp, 'propiedades-adicionales', false) !== false){
+      $comp['propiedades-adicionales'] = self::arr_get($comp['propiedades-adicionales'], 0, []);
+    }
+    
+    if(self::arr_get($comp, 'items', false) !== false){
+      # $comp['items'] = self::arr_get($comp['items'], 0, []);
+
+      foreach ($comp['items'] as $item) {
+        if(self::arr_get($item, 'impuestos', false) !== false){
+          $item['impuestos'] = self::arr_get($item['impuestos'], 0, []);
+        }
+
+        if(self::arr_get($item, 'descuentos-cargos', false) !== false){
+          $item['descuentos-cargos'] = self::arr_get($item['descuentos-cargos'], 0, []);
+        }
+      }
+    }
+
     $payload = [
       'Comprobante' => $comp,
     ];
@@ -42,9 +64,9 @@ class RestService {
     // cualquiera de estas ayuda.
     // error_log(json_encode($payload));  
     // file_put_content('debug.txt', $payload);
-
+    file_put_contents('/tmp/payload.json', json_encode($payload, JSON_PRETTY_PRINT));
     try {
-      $response = $this->http->post('/comprobantes/generar', [
+      $response = $this->http->post('/v1.0.0/comprobantes/generar', [
         'json' => $payload
       ]);
       $respuesta = json_decode($response->getBody());
@@ -76,7 +98,7 @@ class RestService {
     ];
 
     try {
-      $response = $this->http->post('/comprobantes/anular', [
+      $response = $this->http->post('/v1.0.0/comprobantes/anular', [
         'json' => $payload
       ]);
       $respuesta = json_decode($response->getBody());
@@ -94,9 +116,10 @@ class RestService {
     $this->prepareApiClient();
 
     try {
-      $response = $this->http->get('/notificaciones');
+      $response = $this->http->get('/v1.0.0/notificaciones');
       $respuesta = json_decode($response->getBody());
     } catch (RequestException $e) {
+      error_log("\n" . $e ."\n");
       $respuesta = [
         'api-error' => 'REQUEST-ERROR',
       ];
@@ -110,7 +133,7 @@ class RestService {
     $this->prepareApiClient();
 
     try {
-      $response = $this->http->delete("/notificaciones/{$uuid}");
+      $response = $this->http->delete("/v1.0.0/notificaciones/{$uuid}");
       $respuesta = json_decode($response->getBody());
     } catch (RequestException $e) {
       $respuesta = [

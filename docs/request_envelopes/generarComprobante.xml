@@ -3,7 +3,7 @@
     xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
     <SOAP-ENV:Body>
-        <ns6165:RestService.generarComprobante xmlns:ns6165="http://tempuri.org">
+        <ns7304:RestService.generarComprobante xmlns:ns7304="http://tempuri.org">
             <comprobante>
                 <fecha-emision xsi:type="xsd:string">2018-01-01</fecha-emision>
                 <serie-correlativo xsi:type="xsd:string">FA12-00000004</serie-correlativo>
@@ -43,49 +43,51 @@
                     <pais xsi:type="xsd:string">PE</pais>
                     <direccion xsi:type="xsd:string">JR. SANTA ROSA 5 ET</direccion>
                 </cliente>
-                <items>
-                    <id xsi:type="xsd:int">1</id>
-                    <precio-venta xsi:type="xsd:int">3</precio-venta>
-                    <cantidad xsi:type="xsd:int">3</cantidad>
-                    <unidad-medida xsi:type="xsd:string">aaa</unidad-medida>
-                    <descripcion xsi:type="xsd:string">looool</descripcion>
-                    <codigo-producto xsi:type="xsd:string">1dasdasdas</codigo-producto>
-                    <codigo-producto-sunat xsi:type="xsd:string">1sdadasd</codigo-producto-sunat>
-                    <total-item xsi:type="xsd:int">1</total-item>
-                    <precio-unitario xsi:type="xsd:int">123</precio-unitario>
-                    <tipo-precio xsi:type="xsd:string">1</tipo-precio>
-                    <impuestos xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="SOAP-ENC:Array[1]">
-                        <item xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[2]">
-                            <item>
-                                <afectacion-igv xsi:type="xsd:string">10</afectacion-igv>
-                                <base-imponible xsi:type="xsd:float">174.79</base-imponible>
-                                <id xsi:type="xsd:string">VAT</id>
-                                <nombre xsi:type="xsd:string">IGV</nombre>
-                                <sunat-id xsi:type="xsd:string">1000</sunat-id>
-                                <total-impuesto xsi:type="xsd:float">31.46</total-impuesto>
+                <items xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
+                    <item>
+                        <id xsi:type="xsd:int">1</id>
+                        <precio-venta xsi:type="xsd:int">3</precio-venta>
+                        <cantidad xsi:type="xsd:int">3</cantidad>
+                        <unidad-medida xsi:type="xsd:string">aaa</unidad-medida>
+                        <descripcion xsi:type="xsd:string">looool</descripcion>
+                        <codigo-producto xsi:type="xsd:string">1dasdasdas</codigo-producto>
+                        <codigo-producto-sunat xsi:type="xsd:string">1sdadasd</codigo-producto-sunat>
+                        <total-item xsi:type="xsd:int">1</total-item>
+                        <precio-unitario xsi:type="xsd:int">123</precio-unitario>
+                        <tipo-precio xsi:type="xsd:string">1</tipo-precio>
+                        <impuestos xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="SOAP-ENC:Array[1]">
+                            <item xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[2]">
+                                <item>
+                                    <afectacion-igv xsi:type="xsd:string">10</afectacion-igv>
+                                    <base-imponible xsi:type="xsd:float">174.79</base-imponible>
+                                    <id xsi:type="xsd:string">VAT</id>
+                                    <nombre xsi:type="xsd:string">IGV</nombre>
+                                    <sunat-id xsi:type="xsd:string">1000</sunat-id>
+                                    <total-impuesto xsi:type="xsd:float">31.46</total-impuesto>
+                                </item>
+                                <item>
+                                    <afectacion-igv xsi:type="xsd:string">10</afectacion-igv>
+                                    <base-imponible xsi:type="xsd:float">174.79</base-imponible>
+                                    <id xsi:type="xsd:string">VAT</id>
+                                    <nombre xsi:type="xsd:string">IGV</nombre>
+                                    <sunat-id xsi:type="xsd:string">1000</sunat-id>
+                                    <total-impuesto xsi:type="xsd:float">31.46</total-impuesto>
+                                </item>
                             </item>
-                            <item>
-                                <afectacion-igv xsi:type="xsd:string">10</afectacion-igv>
-                                <base-imponible xsi:type="xsd:float">174.79</base-imponible>
-                                <id xsi:type="xsd:string">VAT</id>
-                                <nombre xsi:type="xsd:string">IGV</nombre>
-                                <sunat-id xsi:type="xsd:string">1000</sunat-id>
-                                <total-impuesto xsi:type="xsd:float">31.46</total-impuesto>
+                        </impuestos>
+                        <descuentos-cargos xsi:type="SOAP-ENC:Array"
+                            SOAP-ENC:arrayType="SOAP-ENC:Array[1]">
+                            <item xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
+                                <item>
+                                    <id xsi:type="xsd:string">01</id>
+                                    <flag xsi:type="xsd:string">false</flag>
+                                    <monto xsi:type="xsd:int">1</monto>
+                                    <factor xsi:type="xsd:int">2</factor>
+                                    <base-imponible xsi:type="xsd:int">0</base-imponible>
+                                </item>
                             </item>
-                        </item>
-                    </impuestos>
-                    <descuentos-cargos xsi:type="SOAP-ENC:Array"
-                        SOAP-ENC:arrayType="SOAP-ENC:Array[1]">
-                        <item xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
-                            <item>
-                                <id xsi:type="xsd:string">01</id>
-                                <flag xsi:type="xsd:string">false</flag>
-                                <monto xsi:type="xsd:int">1</monto>
-                                <factor xsi:type="xsd:int">2</factor>
-                                <base-imponible xsi:type="xsd:int">0</base-imponible>
-                            </item>
-                        </item>
-                    </descuentos-cargos>
+                        </descuentos-cargos>
+                    </item>
                 </items>
                 <otros-atributos xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
                     <item>
@@ -107,6 +109,6 @@
                     </item>
                 </impuestos>
             </comprobante>
-        </ns6165:RestService.generarComprobante>
+        </ns7304:RestService.generarComprobante>
     </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
