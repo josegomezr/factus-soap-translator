@@ -3,7 +3,7 @@
 use GuzzleHttp\Exception\RequestException;
 
 class RestService {
-  protected $restBaseUrl = 'http://57da85b3.ngrok.io';
+  protected $restBaseUrl = 'http://63a4c4b1.ngrok.io';
   protected $http = null;
   public function prepareApiClient()
   {
@@ -20,6 +20,10 @@ class RestService {
     return isset($arr[$key]) ? $arr[$key] : $def;
   }
 
+  static function escapeBadChars(&$item, $key){
+    
+  }
+
   public function generarComprobante($soap_comprobante)
   {
     $this->prepareApiClient();
@@ -33,6 +37,12 @@ class RestService {
       'total-impuestos' => self::arr_get($comp, 'total-impuestos'),
       'total-sin-impuestos' => self::arr_get($comp, 'total-sin-impuestos'),
     ];
+
+    unset ($comp['importe-total']);
+    unset ($comp['total-cargos']);
+    unset ($comp['total-descuentos']);
+    unset ($comp['total-impuestos']);
+    unset ($comp['total-sin-impuestos']);
 
     if(self::arr_get($comp, 'impuestos', false) !== false){
       $comp['impuestos'] = self::arr_get($comp['impuestos'], 0, []);
@@ -64,17 +74,25 @@ class RestService {
     // cualquiera de estas ayuda.
     // error_log(json_encode($payload));  
     // file_put_content('debug.txt', $payload);
-    file_put_contents('/tmp/payload.json', json_encode($payload, JSON_PRETTY_PRINT));
     try {
+      
       $response = $this->http->post('/v1.0.0/comprobantes/generar', [
-        'json' => $payload
+        'body' => json_encode($payload, JSON_UNESCAPED_SLASHES),
+        'headers' => [
+          'Accept'     => 'application/json',
+          'Content-type'     => 'application/json',
+        ]
       ]);
       $respuesta = json_decode($response->getBody());
+      $respuesta = $respuesta->respuesta;
     } catch (RequestException $e) {
+      // $req = $e->getRequest();
+      $resp = $e->getResponse();
       $respuesta = [
         'api-error' => 'REQUEST-ERROR',
       ];
     }
+    
 
     return $respuesta;
   }
@@ -99,15 +117,22 @@ class RestService {
 
     try {
       $response = $this->http->post('/v1.0.0/comprobantes/anular', [
-        'json' => $payload
+        'body' => json_encode($payload, JSON_UNESCAPED_SLASHES),
+        'headers' => [
+          'Accept'     => 'application/json',
+          'Content-type'     => 'application/json',
+        ]
       ]);
       $respuesta = json_decode($response->getBody());
+      $respuesta = $respuesta->respuesta;
     } catch (RequestException $e) {
+      $resp = $e->getResponse();
+
       $respuesta = [
         'api-error' => 'REQUEST-ERROR',
       ];
     }
-
+    
     return $respuesta;
   }
 
@@ -118,13 +143,18 @@ class RestService {
     try {
       $response = $this->http->get('/v1.0.0/notificaciones');
       $respuesta = json_decode($response->getBody());
+      $nueva_resp = (array)$respuesta;
+      $nueva_resp['notificaciones'] = array_map(function($item){
+        return (array)$item;
+      }, $nueva_resp['notificaciones']);
+      $respuesta = $nueva_resp;
     } catch (RequestException $e) {
-      error_log("\n" . $e ."\n");
       $respuesta = [
         'api-error' => 'REQUEST-ERROR',
       ];
     }
-    
+    $str = print_r($respuesta, 1);
+    file_put_contents('/tmp/debugger.log', $str."\n", FILE_APPEND);
     return $respuesta;
   }
 

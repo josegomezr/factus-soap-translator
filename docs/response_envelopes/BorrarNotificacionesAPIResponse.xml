@@ -6,8 +6,8 @@
     <SOAP-ENV:Body>
         <ns1:RestService.borrarNotificacionesResponse xmlns:ns1="http://tempuri.org">
             <return xsi:type="tns:BorrarNotificacionesAPIResponse">
-                <codigoError xsi:type="xsd:string">123123123</codigoError>
-                <mensajeError xsi:type="xsd:string">ok</mensajeError>
+                <codigoError xsi:type="xsd:string">0</codigoError>
+                <mensajeError xsi:type="xsd:string">OK</mensajeError>
             </return>
         </ns1:RestService.borrarNotificacionesResponse>
     </SOAP-ENV:Body>

@@ -1,114 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
-    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
-    <SOAP-ENV:Body>
-        <ns7304:RestService.generarComprobante xmlns:ns7304="http://tempuri.org">
-            <comprobante>
-                <fecha-emision xsi:type="xsd:string">2018-01-01</fecha-emision>
-                <serie-correlativo xsi:type="xsd:string">FA12-00000004</serie-correlativo>
-                <tipo-comprobante xsi:type="xsd:string">01</tipo-comprobante>
-                <tipo-moneda xsi:type="xsd:string">PEN</tipo-moneda>
-                <tipo-operacion xsi:type="xsd:string">0101</tipo-operacion>
-                <propiedades-adicionales xsi:type="SOAP-ENC:Array"
-                    SOAP-ENC:arrayType="SOAP-ENC:Array[1]">
-                    <item xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
-                        <item>
-                            <id xsi:type="xsd:string">1000</id>
-                            <valor xsi:type="xsd:string">DOSCIENTOS SEIS CON
-                                25/100 SOLES</valor>
-                            <nombre xsi:type="xsd:string">monto en letras</nombre>
-                        </item>
-                    </item>
-                </propiedades-adicionales>
-                <emisor>
-                    <numero-documento xsi:type="xsd:int">20543314529</numero-documento>
-                    <tipo-documento xsi:type="xsd:string">6</tipo-documento>
-                    <nombre-comercial xsi:type="xsd:string">VIDRIERIA LIMATAMBO
-                        SOCIEDAD ANONIMA CER</nombre-comercial>
-                    <razon-social xsi:type="xsd:string">VIDRIERIA LIMATAMBO
-                        SOCIEDAD ANONIMA CER</razon-social>
-                    <ubigeo xsi:type="xsd:string">130107</ubigeo>
-                    <pais xsi:type="xsd:string">PE</pais>
-                    <departamento xsi:type="xsd:string">LIMA</departamento>
-                    <provincia xsi:type="xsd:string">LIMA</provincia>
-                    <distrito xsi:type="xsd:string">SAN JUAN DE LURIGANC</distrito>
-                    <direccion xsi:type="xsd:string">AV. PROC. DE LA INDEPENDE</direccion>
-                    <establecimiento xsi:type="xsd:int">1000</establecimiento>
-                </emisor>
-                <cliente>
-                    <numero-documento xsi:type="xsd:string">10218825945</numero-documento>
-                    <tipo-documento xsi:type="xsd:string">6</tipo-documento>
-                    <razon-social xsi:type="xsd:string">FLORES JIMENEZ JIMER</razon-social>
-                    <pais xsi:type="xsd:string">PE</pais>
-                    <direccion xsi:type="xsd:string">JR. SANTA ROSA 5 ET</direccion>
-                </cliente>
-                <items xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
-                    <item>
-                        <id xsi:type="xsd:int">1</id>
-                        <precio-venta xsi:type="xsd:int">3</precio-venta>
-                        <cantidad xsi:type="xsd:int">3</cantidad>
-                        <unidad-medida xsi:type="xsd:string">aaa</unidad-medida>
-                        <descripcion xsi:type="xsd:string">looool</descripcion>
-                        <codigo-producto xsi:type="xsd:string">1dasdasdas</codigo-producto>
-                        <codigo-producto-sunat xsi:type="xsd:string">1sdadasd</codigo-producto-sunat>
-                        <total-item xsi:type="xsd:int">1</total-item>
-                        <precio-unitario xsi:type="xsd:int">123</precio-unitario>
-                        <tipo-precio xsi:type="xsd:string">1</tipo-precio>
-                        <impuestos xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="SOAP-ENC:Array[1]">
-                            <item xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[2]">
-                                <item>
-                                    <afectacion-igv xsi:type="xsd:string">10</afectacion-igv>
-                                    <base-imponible xsi:type="xsd:float">174.79</base-imponible>
-                                    <id xsi:type="xsd:string">VAT</id>
-                                    <nombre xsi:type="xsd:string">IGV</nombre>
-                                    <sunat-id xsi:type="xsd:string">1000</sunat-id>
-                                    <total-impuesto xsi:type="xsd:float">31.46</total-impuesto>
-                                </item>
-                                <item>
-                                    <afectacion-igv xsi:type="xsd:string">10</afectacion-igv>
-                                    <base-imponible xsi:type="xsd:float">174.79</base-imponible>
-                                    <id xsi:type="xsd:string">VAT</id>
-                                    <nombre xsi:type="xsd:string">IGV</nombre>
-                                    <sunat-id xsi:type="xsd:string">1000</sunat-id>
-                                    <total-impuesto xsi:type="xsd:float">31.46</total-impuesto>
-                                </item>
-                            </item>
-                        </impuestos>
-                        <descuentos-cargos xsi:type="SOAP-ENC:Array"
-                            SOAP-ENC:arrayType="SOAP-ENC:Array[1]">
-                            <item xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
-                                <item>
-                                    <id xsi:type="xsd:string">01</id>
-                                    <flag xsi:type="xsd:string">false</flag>
-                                    <monto xsi:type="xsd:int">1</monto>
-                                    <factor xsi:type="xsd:int">2</factor>
-                                    <base-imponible xsi:type="xsd:int">0</base-imponible>
-                                </item>
-                            </item>
-                        </descuentos-cargos>
-                    </item>
-                </items>
-                <otros-atributos xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
-                    <item>
-                        <grupo xsi:type="xsd:string">x</grupo>
-                        <nombre xsi:type="xsd:string">x</nombre>
-                        <valor xsi:type="xsd:string">x</valor>
-                    </item>
-                </otros-atributos>
-                <impuestos xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="SOAP-ENC:Array[1]">
-                    <item xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
-                        <item>
-                            <afectacion-igv xsi:type="xsd:string">10</afectacion-igv>
-                            <base-imponible xsi:type="xsd:float">174.79</base-imponible>
-                            <id xsi:type="xsd:string">VAT</id>
-                            <nombre xsi:type="xsd:string">IGV</nombre>
-                            <sunat-id xsi:type="xsd:string">1000</sunat-id>
-                            <total-impuesto xsi:type="xsd:float">31.46</total-impuesto>
-                        </item>
-                    </item>
-                </impuestos>
-            </comprobante>
-        </ns7304:RestService.generarComprobante>
-    </SOAP-ENV:Body>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+  <SOAP-ENV:Body>
+    <ns6398:RestService.generarComprobante xmlns:ns6398="http://tempuri.org">
+      <comprobante>
+        <fecha-emision xsi:type="xsd:string">2018-10-05</fecha-emision>
+        <serie-correlativo xsi:type="xsd:string">FA12-00000006</serie-correlativo>
+        <tipo-comprobante xsi:type="xsd:string">01</tipo-comprobante>
+        <tipo-moneda xsi:type="xsd:string">USD</tipo-moneda>
+        <tipo-operacion xsi:type="xsd:string">0200</tipo-operacion>
+        <propiedades-adicionales xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="SOAP-ENC:Array[1]">
+          <item xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
+            <item>
+              <id xsi:type="xsd:int">1000</id>
+              <nombre xsi:type="xsd:string">Monto en Letras</nombre>
+              <valor xsi:type="xsd:string">CUARENTA Y SIETE MIL NOVECIENTOS TREINTA CON 40/100 DOLARES AMERICANOS</valor>
+            </item>
+          </item>
+        </propiedades-adicionales>
+        <importe-total xsi:type="xsd:float">47930.4</importe-total>
+        <total-cargos xsi:type="xsd:int">0</total-cargos>
+        <total-descuentos xsi:type="xsd:int">0</total-descuentos>
+        <total-impuestos xsi:type="xsd:int">0</total-impuestos>
+        <total-sin-impuestos xsi:type="xsd:float">47930.4</total-sin-impuestos>
+        <emisor>
+          <numero-documento xsi:type="xsd:string">20543314529</numero-documento>
+          <tipo-documento xsi:type="xsd:string">6</tipo-documento>
+          <nombre-comercial xsi:type="xsd:string">complexlesS.A.C.</nombre-comercial>
+          <razon-social xsi:type="xsd:string">COMPLEXLESS S.A.C.</razon-social>
+          <ubigeo xsi:type="xsd:int">150119</ubigeo>
+          <pais xsi:type="xsd:string">PE</pais>
+          <departamento xsi:type="xsd:string">LIMA</departamento>
+          <provincia xsi:type="xsd:string">LIMA</provincia>
+          <distrito xsi:type="xsd:string">LURIN</distrito>
+          <direccion xsi:type="xsd:string">CALLE F S/N URBANIZACIN SANTA GENOVEVA</direccion>
+          <establecimiento xsi:type="xsd:string">10001</establecimiento>
+        </emisor>
+        <cliente>
+          <numero-documento xsi:type="xsd:string">-</numero-documento>
+          <tipo-documento xsi:type="xsd:string">0</tipo-documento>
+          <razon-social xsi:type="xsd:string">JSC TIMBER LTD</razon-social>
+          <pais xsi:type="xsd:string">NZ</pais>
+          <direccion xsi:type="xsd:string">22 Sawmill Road, Riverhead, Auckland 0841 - Auckland - Nueva Zelanda</direccion>
+        </cliente>
+        <items xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[2]">
+          <item>
+            <id xsi:type="xsd:int">1</id>
+            <precio-venta xsi:type="xsd:int">1640</precio-venta>
+            <cantidad xsi:type="xsd:float">27.61</cantidad>
+            <unidad-medida xsi:type="xsd:string">MTQ</unidad-medida>
+            <descripcion xsi:type="xsd:string">GARAPA - FSC 100% DECKING SGS-COC-002228 KILN DRIED GRADE:A IN 19MM THICKNESS</descripcion>
+            <codigo-producto xsi:type="xsd:string">18.16.013599</codigo-producto>
+            <codigo-producto-sunat xsi:type="xsd:string">41111801</codigo-producto-sunat>
+            <total-item xsi:type="xsd:float">45280.4</total-item>
+            <precio-unitario xsi:type="xsd:int">1640</precio-unitario>
+            <tipo-precio xsi:type="xsd:string">01</tipo-precio>
+            <impuestos xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="SOAP-ENC:Array[1]">
+              <item xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
+                <item>
+                  <afectacion-igv xsi:type="xsd:int">40</afectacion-igv>
+                  <base-imponible xsi:type="xsd:float">45280.4</base-imponible>
+                  <id xsi:type="xsd:string">FRE</id>
+                  <nombre xsi:type="xsd:string">EXP</nombre>
+                  <sunat-id xsi:type="xsd:int">9995</sunat-id>
+                  <total-impuesto xsi:type="xsd:int">0</total-impuesto>
+                  <porcentaje xsi:type="xsd:int">0</porcentaje>
+                </item>
+              </item>
+            </impuestos>
+          </item>
+          <item>
+            <id xsi:type="xsd:int">2</id>
+            <precio-venta xsi:type="xsd:int">2650</precio-venta>
+            <cantidad xsi:type="xsd:int">1</cantidad>
+            <unidad-medida xsi:type="xsd:string">NIU</unidad-medida>
+            <descripcion xsi:type="xsd:string">OCEAN FREIGHT</descripcion>
+            <codigo-producto xsi:type="xsd:string">-</codigo-producto>
+            <codigo-producto-sunat xsi:type="xsd:string">41111801</codigo-producto-sunat>
+            <total-item xsi:type="xsd:int">2650</total-item>
+            <precio-unitario xsi:type="xsd:int">2650</precio-unitario>
+            <tipo-precio xsi:type="xsd:string">01</tipo-precio>
+            <impuestos xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="SOAP-ENC:Array[1]">
+              <item xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
+                <item>
+                  <afectacion-igv xsi:type="xsd:int">40</afectacion-igv>
+                  <base-imponible xsi:type="xsd:int">2650</base-imponible>
+                  <id xsi:type="xsd:string">FRE</id>
+                  <nombre xsi:type="xsd:string">EXP</nombre>
+                  <sunat-id xsi:type="xsd:int">9995</sunat-id>
+                  <total-impuesto xsi:type="xsd:int">0</total-impuesto>
+                  <porcentaje xsi:type="xsd:int">0</porcentaje>
+                </item>
+              </item>
+            </impuestos>
+          </item>
+        </items>
+        <otros-atributos xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[3]">
+          <item>
+            <grupo xsi:type="xsd:string">factus_pe</grupo>
+            <nombre xsi:type="xsd:string">mail-cliente</nombre>
+            <valor xsi:type="xsd:string">facturacion@Complexless.com</valor>
+          </item>
+          <item>
+            <grupo xsi:type="xsd:string">factus_pe</grupo>
+            <nombre xsi:type="xsd:string">mail-facturador</nombre>
+            <valor xsi:type="xsd:string">facturacion@Complexless.com</valor>
+          </item>
+          <item>
+            <grupo xsi:type="xsd:string">PE</grupo>
+            <nombre xsi:type="xsd:string">Plantilla</nombre>
+            <valor xsi:type="xsd:string">factura-exterior-v1.jasper</valor>
+          </item>
+        </otros-atributos>
+        <impuestos xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="SOAP-ENC:Array[1]">
+          <item xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="unnamed_struct_use_soapval[1]">
+            <item>
+              <base-imponible xsi:type="xsd:float">47930.4</base-imponible>
+              <id xsi:type="xsd:string">FRE</id>
+              <nombre xsi:type="xsd:string">EXP</nombre>
+              <sunat-id xsi:type="xsd:int">9995</sunat-id>
+              <total-impuesto xsi:type="xsd:int">0</total-impuesto>
+            </item>
+          </item>
+        </impuestos>
+      </comprobante>
+    </ns6398:RestService.generarComprobante>
+  </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

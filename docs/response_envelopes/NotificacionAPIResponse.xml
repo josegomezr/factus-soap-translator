@@ -1,26 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
-    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
-    xmlns:tns="http://localhost/soap-translator">
-    <SOAP-ENV:Body>
-        <ns1:RestService.obtenerNotificacionesResponse xmlns:ns1="http://tempuri.org">
-            <return xsi:type="tns:NotificacionAPIResponse">
-                <notificaciones xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="tns:Notificacion[1]">
-                    <item xsi:type="tns:Notificacion">
-                        <nid xsi:type="xsd:string"></nid>
-                        <tipo xsi:type="xsd:string"></tipo>
-                        <comprobante xsi:type="xsd:string"></comprobante>
-                        <status xsi:type="xsd:string"></status>
-                        <ruc xsi:type="xsd:string"></ruc>
-                        <createTime xsi:type="xsd:string"></createTime>
-                        <codigo xsi:type="xsd:string"></codigo>
-                        <descripcion xsi:type="xsd:string"></descripcion>
-                        <cdr xsi:nil="true" xsi:type="xsd:string" />
-                    </item>
-                </notificaciones>
-                <uuid xsi:type="xsd:string">123123123</uuid>
-            </return>
-        </ns1:RestService.obtenerNotificacionesResponse>
-    </SOAP-ENV:Body>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://localhost/soap-translator">
+  <SOAP-ENV:Body>
+    <ns1:RestService.obtenerNotificacionesResponse xmlns:ns1="http://tempuri.org">
+      <return xsi:type="tns:NotificacionAPIResponse">
+        <notificaciones xsi:type="SOAP-ENC:Array" SOAP-ENC:arrayType="tns:Notificacion[6]">
+          <item xsi:type="tns:Notificacion">
+            <nid xsi:type="xsd:string">1</nid>
+            <tipo xsi:type="xsd:string">0</tipo>
+            <comprobante xsi:type="xsd:string">20543314529-01-FA12-00000002</comprobante>
+            <status xsi:type="xsd:string">00</status>
+            <ruc xsi:type="xsd:string">20543314529</ruc>
+            <createTime xsi:type="xsd:string">2018-11-20 21:06:20</createTime>
+            <codigo xsi:type="xsd:string">17001</codigo>
+            <descripcion xsi:type="xsd:string">El comprobante no se puede actualizar porque ya tiene un cdr en sunat</descripcion>
+          </item>
+          <item xsi:type="tns:Notificacion">
+            <nid xsi:type="xsd:string">2</nid>
+            <tipo xsi:type="xsd:string">0</tipo>
+            <comprobante xsi:type="xsd:string">20543314529-01-FA12-00000002</comprobante>
+            <status xsi:type="xsd:string">00</status>
+            <ruc xsi:type="xsd:string">20543314529</ruc>
+            <createTime xsi:type="xsd:string">2018-11-20 21:24:45</createTime>
+            <codigo xsi:type="xsd:string">17001</codigo>
+            <descripcion xsi:type="xsd:string">El comprobante no se puede actualizar porque ya tiene un cdr en sunat</descripcion>
+          </item>
+          <item xsi:type="tns:Notificacion">
+            <nid xsi:type="xsd:string">3</nid>
+            <tipo xsi:type="xsd:string">0</tipo>
+            <comprobante xsi:type="xsd:string">20543314529-01-FA12-00000002</comprobante>
+            <status xsi:type="xsd:string">00</status>
+            <ruc xsi:type="xsd:string">20543314529</ruc>
+            <createTime xsi:type="xsd:string">2018-11-20 21:25:36</createTime>
+            <codigo xsi:type="xsd:string">17001</codigo>
+            <descripcion xsi:type="xsd:string">El comprobante no se puede actualizar porque ya tiene un cdr en sunat</descripcion>
+          </item>
+          <item xsi:type="tns:Notificacion">
+            <nid xsi:type="xsd:string">4</nid>
+            <tipo xsi:type="xsd:string">0</tipo>
+            <comprobante xsi:type="xsd:string">20543314529-01-FA12-00000006</comprobante>
+            <status xsi:type="xsd:string">00</status>
+            <ruc xsi:type="xsd:string">20543314529</ruc>
+            <createTime xsi:type="xsd:string">2018-11-20 22:13:46</createTime>
+            <codigo xsi:type="xsd:string">17001</codigo>
+            <descripcion xsi:type="xsd:string">El comprobante no se puede actualizar porque ya tiene un cdr en sunat</descripcion>
+          </item>
+          <item xsi:type="tns:Notificacion">
+            <nid xsi:type="xsd:string">5</nid>
+            <tipo xsi:type="xsd:string">0</tipo>
+            <comprobante xsi:type="xsd:string">20543314529-01-FA12-00000006</comprobante>
+            <status xsi:type="xsd:string">00</status>
+            <ruc xsi:type="xsd:string">20543314529</ruc>
+            <createTime xsi:type="xsd:string">2018-11-20 22:32:56</createTime>
+            <codigo xsi:type="xsd:string">17001</codigo>
+            <descripcion xsi:type="xsd:string">El comprobante no se puede actualizar porque ya tiene un cdr en sunat</descripcion>
+          </item>
+          <item xsi:type="tns:Notificacion">
+            <nid xsi:type="xsd:string">6</nid>
+            <tipo xsi:type="xsd:string">0</tipo>
+            <comprobante xsi:type="xsd:string">20543314529-01-FA12-00000006</comprobante>
+            <status xsi:type="xsd:string">01</status>
+            <ruc xsi:type="xsd:string">20543314529</ruc>
+            <createTime xsi:type="xsd:string">2018-11-20 22:40:07</createTime>
+            <codigo xsi:type="xsd:string">0</codigo>
+            <descripcion xsi:type="xsd:string">El comprobante FA12-00000006 ha sido dado de baja en Factus, sera comunicado a SUNAT mediante un resumen</descripcion>
+          </item>
+        </notificaciones>
+        <uuid xsi:type="xsd:string">b0ccfaa7-d768-4fde-9001-5c53b111eab9</uuid>
+      </return>
+    </ns1:RestService.obtenerNotificacionesResponse>
+  </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

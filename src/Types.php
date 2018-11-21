@@ -11,7 +11,7 @@ return [
     'elements'        => array( // elements
       'numero-documento' => array(
         'name' => 'numero-documento',
-        'type' => 'xsd:int',
+        'type' => 'xsd:string',
       ),
       'tipo-documento' => array(
         'name' => 'tipo-documento',
